@@ -1,38 +1,18 @@
 import React, { Component } from "react";
 
 export class Experience extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      companyName: "",
-      positionTitle: "",
-      mainTasks: "",
-      dateFrom: "",
-      dateTill: "",
-    };
-  }
-
-  handleChange = (event) => {
-    this.setState({ [event.target.name]: event.target.value });
-  };
-
-  handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(this.state);
-  };
-
   render() {
     return (
       <section className="experience">
         <b>Experience</b>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.props.handleSubmit}>
           <label>
             Company Name:
             <input
               type="text"
-              name="companyName"
-              value={this.state.companyName}
-              onChange={this.handleChange}
+              name="experience.companyName"
+              value={this.props.experience.companyName}
+              onChange={this.props.onChange}
             />
           </label>
           <br />
@@ -40,9 +20,9 @@ export class Experience extends Component {
             Position Title:
             <input
               type="text"
-              name="positionTitle"
-              value={this.state.positionTitle}
-              onChange={this.handleChange}
+              name="experience.positionTitle"
+              value={this.props.experience.positionTitle}
+              onChange={this.props.onChange}
             />
           </label>
           <br />
@@ -50,9 +30,9 @@ export class Experience extends Component {
             Main Tasks:
             <input
               type="text"
-              name="mainTasks"
-              value={this.state.mainTasks}
-              onChange={this.handleChange}
+              name="experience.mainTasks"
+              value={this.props.experience.mainTasks}
+              onChange={this.props.onChange}
             />
           </label>
           <br />
@@ -60,9 +40,9 @@ export class Experience extends Component {
             Date worked from:
             <input
               type="date"
-              name="dateFrom"
-              value={this.state.dateFrom}
-              onChange={this.handleChange}
+              name="experience.dateFrom"
+              value={this.props.experience.dateFrom}
+              onChange={this.props.onChange}
             />
           </label>
           <br />
@@ -70,9 +50,9 @@ export class Experience extends Component {
             Date worked till:
             <input
               type="date"
-              name="dateTill"
-              value={this.state.dateTill}
-              onChange={this.handleChange}
+              name="experience.dateTill"
+              value={this.props.experience.dateTill}
+              onChange={this.props.onChange}
             />
           </label>
           <br />

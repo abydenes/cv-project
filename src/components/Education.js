@@ -1,36 +1,18 @@
 import React, { Component } from "react";
 
 export class Education extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      schoolName: "",
-      titleOfStudy: "",
-      dateOfStudy: "",
-    };
-  }
-
-  handleChange = (event) => {
-    this.setState({ [event.target.name]: event.target.value });
-  };
-
-  handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(this.state);
-  };
-
   render() {
     return (
       <section className="education">
         <b>Education</b>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.props.handleSubmit}>
           <label>
-            Name:
+            School Name:
             <input
               type="text"
-              name="schoolName"
-              value={this.state.schoolName}
-              onChange={this.handleChange}
+              name="education.schoolName"
+              value={this.props.education.schoolName}
+              onChange={this.props.onChange}
             />
           </label>
           <br />
@@ -38,9 +20,9 @@ export class Education extends Component {
             Title of Study:
             <input
               type="text"
-              name="titleOfStudy"
-              value={this.state.titleOfStudy}
-              onChange={this.handleChange}
+              name="education.titleOfStudy"
+              value={this.props.education.titleOfStudy}
+              onChange={this.props.onChange}
             />
           </label>
           <br />
@@ -48,9 +30,9 @@ export class Education extends Component {
             Date of Study:
             <input
               type="text"
-              name="dateOfStudy"
-              value={this.state.dateOfStudy}
-              onChange={this.handleChange}
+              name="education.dateOfStudy"
+              value={this.props.education.dateOfStudy}
+              onChange={this.props.onChange}
             />
           </label>
           <br />
