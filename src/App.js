@@ -11,14 +11,17 @@ export default class App extends React.Component {
     super(props);
 
     this.state = {
-      generalInfo: { fullName: "", email: "", tel: "" },
-      education: { schoolName: "", titleOfStudy: "", dateOfStudy: "" },
-      experience: {
-        companyName: "",
-        positionTitle: "",
-        mainTasks: "",
-        dateFrom: "",
-        dateTill: "",
+      submitted: [],
+      current: {
+        generalInfo: { fullName: "", email: "", tel: "" },
+        education: { schoolName: "", titleOfStudy: "", dateOfStudy: "" },
+        experience: {
+          companyName: "",
+          positionTitle: "",
+          mainTasks: "",
+          dateFrom: "",
+          dateTill: "",
+        },
       },
     };
   }
@@ -27,15 +30,24 @@ export default class App extends React.Component {
     const { name, value } = event.target;
     const [objName, keyName] = name.split(".");
     this.setState((prevState) => ({
-      [objName]: {
-        ...prevState[objName],
-        [keyName]: value,
+      current: {
+        [objName]: {
+          ...prevState[objName],
+          [keyName]: value,
+        },
       },
     }));
   };
 
   handleSubmit = (event) => {
     event.preventDefault();
+    this.setState({
+      submitted: this.state.submitted.concat(
+        this.state.generalInfo,
+        this.state.education,
+        this.state.experience
+      ),
+    });
   };
 
   render() {
@@ -45,23 +57,23 @@ export default class App extends React.Component {
         <div className="main-container">
           <div className="forms-container">
             <GeneralInfo
-              generalInfo={this.state.generalInfo}
+              generalInfo={this.state.current.generalInfo}
               onChange={this.handleChange}
               onSubmit={this.handleSubmit}
             />
             <Education
-              education={this.state.education}
+              education={this.state.current.education}
               onChange={this.handleChange}
               onSubmit={this.handleSubmit}
             />
             <Experience
-              experience={this.state.experience}
+              experience={this.state.current.experience}
               onChange={this.handleChange}
               onSubmit={this.handleSubmit}
             />
           </div>
           <div className="preview-container">
-            <Preview parentState={this.state} />
+            <Preview submitted={this.state.submitted} />
           </div>
         </div>
       </>

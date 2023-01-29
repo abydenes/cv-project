@@ -5,7 +5,7 @@ export class Education extends Component {
     return (
       <section className="education">
         <b>Education</b>
-        <form onSubmit={this.props.handleSubmit}>
+        <form onSubmit={this.props.onSubmit}>
           <label>
             School Name:
             <input

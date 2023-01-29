@@ -41,6 +41,7 @@ body {
   flex-direction: column;
   gap: 2rem;
   margin-right: 200px;
+  font-size: 10px;
 }
 
 .preview {
@@ -55,7 +56,6 @@ body {
 .p-header {
   display: flex;
   justify-content: space-between;
-  font-size: 12px;
   margin-bottom: 2rem;
 }
 
