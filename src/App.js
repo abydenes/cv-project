@@ -11,7 +11,11 @@ export default class App extends React.Component {
     super(props);
 
     this.state = {
-      submitted: [],
+      submitted: {
+        generalInfo: [],
+        education: [],
+        experience: [],
+      },
       current: {
         generalInfo: { fullName: "", email: "", tel: "" },
         education: { schoolName: "", titleOfStudy: "", dateOfStudy: "" },
@@ -30,25 +34,41 @@ export default class App extends React.Component {
     const { name, value } = event.target;
     const [objName, keyName] = name.split(".");
     this.setState((prevState) => ({
+      ...prevState,
       current: {
+        ...prevState.current,
         [objName]: {
-          ...prevState[objName],
+          ...prevState.current[objName],
           [keyName]: value,
         },
       },
     }));
   };
 
-  handleSubmit = (event) => {
+  handleSubmit = (event, currentKey) => {
     event.preventDefault();
-    this.setState({
-      submitted: this.state.submitted.concat(
-        this.state.generalInfo,
-        this.state.education,
-        this.state.experience
-      ),
-    });
+    this.setState((prevState) => ({
+      submitted: {
+        ...prevState.submitted,
+        [currentKey]: prevState.submitted[currentKey].concat(
+          prevState.current[currentKey]
+        ),
+      },
+      current: {
+        ...prevState.current,
+        education: { schoolName: "", titleOfStudy: "", dateOfStudy: "" },
+        experience: {
+          companyName: "",
+          positionTitle: "",
+          mainTasks: "",
+          dateFrom: "",
+          dateTill: "",
+        },
+      },
+    }));
   };
+
+  handleEdit = () => {};
 
   render() {
     return (
@@ -73,7 +93,10 @@ export default class App extends React.Component {
             />
           </div>
           <div className="preview-container">
-            <Preview submitted={this.state.submitted} />
+            <Preview
+              submitted={this.state.submitted}
+              handleEdit={this.handleEdit}
+            />
           </div>
         </div>
       </>

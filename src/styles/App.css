@@ -30,7 +30,26 @@ body {
   width: 30vw;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
+}
+
+.general-info {
+  padding: 1rem;
+  background-color: #e9ebb8;
+}
+
+.education {
+  padding: 1rem;
+  background-color: rgb(209, 157, 157);
+}
+
+.experience {
+  padding: 1rem;
+  background-color: #c5b3e8;
+}
+
+input {
+  margin: 0.5rem;
 }
 
 .preview-container {
@@ -59,18 +78,34 @@ body {
   margin-bottom: 2rem;
 }
 
-.general-info {
-  background-color: #e9ebb8;
+.p-header-right {
+  text-align: right;
 }
 
-.education {
-  background-color: rgb(209, 157, 157);
+.p-education,
+.p-experience {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.experience {
-  background-color: #c5b3e8;
+.p-education > b {
+  border-bottom: 1px solid rgb(84, 84, 84);
+}
+.p-experience > b {
+  border-bottom: 1px solid black;
 }
 
-input {
-  margin: 0.5rem;
+.p-education-ele,
+.p-experience-ele {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 0.2rem;
+}
+
+.edit-and-delete {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
 }

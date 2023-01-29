@@ -5,7 +5,7 @@ export class Experience extends Component {
     return (
       <section className="experience">
         <b>Experience</b>
-        <form onSubmit={this.props.onSubmit}>
+        <form onSubmit={(e) => this.props.onSubmit(e, "experience")}>
           <label>
             Company Name:
             <input

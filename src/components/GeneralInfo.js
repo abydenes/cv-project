@@ -5,7 +5,7 @@ export class GeneralInfo extends Component {
     return (
       <section className="general-info">
         <b>General Information</b>
-        <form onSubmit={this.props.onSubmit}>
+        <form onSubmit={(e) => this.props.onSubmit(e, "generalInfo")}>
           <label>
             Name:
             <input

@@ -10,7 +10,7 @@ export class InputField extends Component {
             type="text"
             name={this.props.name}
             value={this.props.value}
-            onChange={(e) => this.props.handleChange(e)}
+            onChange={(e) => this.props.onChange(e)}
           />
         </label>
         <br />
