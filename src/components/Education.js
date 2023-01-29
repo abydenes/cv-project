@@ -13,6 +13,7 @@ export class Education extends Component {
               name="education.schoolName"
               value={this.props.education.schoolName}
               onChange={this.props.onChange}
+              required
             />
           </label>
           <br />
@@ -23,6 +24,7 @@ export class Education extends Component {
               name="education.titleOfStudy"
               value={this.props.education.titleOfStudy}
               onChange={this.props.onChange}
+              required
             />
           </label>
           <br />
@@ -33,6 +35,7 @@ export class Education extends Component {
               name="education.dateOfStudy"
               value={this.props.education.dateOfStudy}
               onChange={this.props.onChange}
+              required
             />
           </label>
           <br />

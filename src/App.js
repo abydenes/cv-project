@@ -68,7 +68,21 @@ export default class App extends React.Component {
     }));
   };
 
-  handleEdit = () => {};
+  handleEdit = (index, currentKey) => {
+    console.log(index);
+    this.setState((prevState) => ({
+      submitted: {
+        ...prevState.submitted,
+        [currentKey]: prevState.submitted[currentKey].filter(
+          (x) => x != prevState.submitted[currentKey][index]
+        ),
+      },
+      current: {
+        ...prevState.current,
+        [currentKey]: prevState.submitted[currentKey][index],
+      },
+    }));
+  };
 
   render() {
     return (

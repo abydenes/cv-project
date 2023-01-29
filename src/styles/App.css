@@ -106,6 +106,5 @@ input {
 
 .edit-and-delete {
   display: flex;
-  gap: 0.5rem;
   align-items: center;
 }

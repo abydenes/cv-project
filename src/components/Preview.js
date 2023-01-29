@@ -24,7 +24,7 @@ export class Preview extends Component {
           </div>
           <div className="p-education">
             <b>Education </b>
-            {education.map((ele) => {
+            {education.map((ele,index) => {
               return (
                 <div className="p-education-ele">
                   <div className="date-of-study">{ele.dateOfStudy}</div>
@@ -33,7 +33,10 @@ export class Preview extends Component {
                     <div className="title-of-study">{ele.titleOfStudy}</div>
                   </div>
                   <div className="edit-and-delete">
-                    <FontAwesomeIcon icon={faEdit} onClick={this.props.handleEdit}/>
+                    <FontAwesomeIcon
+                      icon={faEdit}
+                      onClick={() => this.props.handleEdit(index, "education")}
+                    />
                   </div>
                 </div>
               );
@@ -41,7 +44,7 @@ export class Preview extends Component {
           </div>
           <div className="p-experience">
             <b>Experience </b>
-            {experience.map((ele) => {
+            {experience.map((ele, index) => {
               return (
                 <div className="p-experience-ele">
                   <div>
@@ -52,6 +55,12 @@ export class Preview extends Component {
                     <div className="company-name">{ele.companyName}</div>
                     <div className="position-title">{ele.positionTitle}</div>
                     <div className="main-tasks">{ele.mainTasks}</div>
+                  </div>
+                  <div className="edit-and-delete">
+                    <FontAwesomeIcon
+                      icon={faEdit}
+                      onClick={() => this.props.handleEdit(index, "experience")}
+                    />
                   </div>
                 </div>
               );

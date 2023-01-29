@@ -13,6 +13,7 @@ export class Experience extends Component {
               name="experience.companyName"
               value={this.props.experience.companyName}
               onChange={this.props.onChange}
+              required
             />
           </label>
           <br />
@@ -23,6 +24,7 @@ export class Experience extends Component {
               name="experience.positionTitle"
               value={this.props.experience.positionTitle}
               onChange={this.props.onChange}
+              required
             />
           </label>
           <br />
@@ -33,6 +35,7 @@ export class Experience extends Component {
               name="experience.mainTasks"
               value={this.props.experience.mainTasks}
               onChange={this.props.onChange}
+              required
             />
           </label>
           <br />
@@ -43,6 +46,7 @@ export class Experience extends Component {
               name="experience.dateFrom"
               value={this.props.experience.dateFrom}
               onChange={this.props.onChange}
+              required
             />
           </label>
           <br />
@@ -53,6 +57,7 @@ export class Experience extends Component {
               name="experience.dateTill"
               value={this.props.experience.dateTill}
               onChange={this.props.onChange}
+              required
             />
           </label>
           <br />

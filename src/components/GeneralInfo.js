@@ -13,6 +13,7 @@ export class GeneralInfo extends Component {
               name="generalInfo.fullName"
               value={this.props.generalInfo.fullName}
               onChange={this.props.onChange}
+              required
             />
           </label>
           <br />
@@ -23,6 +24,7 @@ export class GeneralInfo extends Component {
               name="generalInfo.email"
               value={this.props.generalInfo.email}
               onChange={this.props.onChange}
+              required
             />
           </label>
           <br />
@@ -33,6 +35,7 @@ export class GeneralInfo extends Component {
               name="generalInfo.tel"
               value={this.props.generalInfo.tel}
               onChange={this.props.onChange}
+              required
             />
           </label>
           <br />
