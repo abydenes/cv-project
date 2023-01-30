@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEdit } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faPhone, faEdit } from "@fortawesome/free-solid-svg-icons";
 
 export class Preview extends Component {
   render() {
@@ -13,18 +13,17 @@ export class Preview extends Component {
             <div className="full-name">{currentGeneralInfo.fullName}</div>
             <div className="p-header-right">
               <div className="email">
-                <b>E-mail: </b>
-                {currentGeneralInfo.email}
+                <FontAwesomeIcon icon={faEnvelope} /> {currentGeneralInfo.email}
               </div>
               <div className="tel">
-                <b>Phone: </b>
+                <FontAwesomeIcon icon={faPhone} /> {}
                 {currentGeneralInfo.tel}
               </div>
             </div>
           </div>
           <div className="p-education">
             <b>Education </b>
-            {education.map((ele,index) => {
+            {education.map((ele, index) => {
               return (
                 <div className="p-education-ele">
                   <div className="date-of-study">{ele.dateOfStudy}</div>
