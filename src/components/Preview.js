@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhone, faEdit } from "@fortawesome/free-solid-svg-icons";
 
-export class Preview extends Component {
-  render() {
-    const { generalInfo, education, experience } = this.props.submitted;
+
+function Preview({submitted,handleEdit}) {
+    const { generalInfo, education, experience } = submitted;
     if (generalInfo[0]) {
       const currentGeneralInfo = generalInfo[generalInfo.length - 1];
       return (
@@ -34,7 +34,7 @@ export class Preview extends Component {
                   <div className="edit-and-delete">
                     <FontAwesomeIcon
                       icon={faEdit}
-                      onClick={() => this.props.handleEdit(index, "education")}
+                      onClick={() => handleEdit(index, "education")}
                     />
                   </div>
                 </div>
@@ -69,6 +69,6 @@ export class Preview extends Component {
       );
     } else return <div className="preview"></div>;
   }
-}
+
 
 export default Preview;

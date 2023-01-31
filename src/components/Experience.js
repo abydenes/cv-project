@@ -1,71 +1,69 @@
-import React, { Component } from "react";
+import React from "react";
 
-export class Experience extends Component {
-  render() {
-    return (
-      <section className="experience">
-        <b>Experience</b>
-        <form onSubmit={(e) => this.props.onSubmit(e, "experience")}>
-          <label>
-            Company Name:
-            <input
-              type="text"
-              name="experience.companyName"
-              value={this.props.experience.companyName}
-              onChange={this.props.onChange}
-              required
-            />
-          </label>
-          <br />
-          <label>
-            Position Title:
-            <input
-              type="text"
-              name="experience.positionTitle"
-              value={this.props.experience.positionTitle}
-              onChange={this.props.onChange}
-              required
-            />
-          </label>
-          <br />
-          <label>
-            Main Tasks:
-            <input
-              type="text"
-              name="experience.mainTasks"
-              value={this.props.experience.mainTasks}
-              onChange={this.props.onChange}
-              required
-            />
-          </label>
-          <br />
-          <label>
-            Date worked from:
-            <input
-              type="date"
-              name="experience.dateFrom"
-              value={this.props.experience.dateFrom}
-              onChange={this.props.onChange}
-              required
-            />
-          </label>
-          <br />
-          <label>
-            Date worked till:
-            <input
-              type="date"
-              name="experience.dateTill"
-              value={this.props.experience.dateTill}
-              onChange={this.props.onChange}
-              required
-            />
-          </label>
-          <br />
-          <button type="submit">Submit</button>
-        </form>
-      </section>
-    );
-  }
+function Experience({ experience, onChange, onSubmit }) {
+  return (
+    <section className="experience">
+      <b>Experience</b>
+      <form onSubmit={(e) => onSubmit(e, "experience")}>
+        <label>
+          Company Name:
+          <input
+            type="text"
+            name="experience.companyName"
+            value={experience.companyName}
+            onChange={onChange}
+            required
+          />
+        </label>
+        <br />
+        <label>
+          Position Title:
+          <input
+            type="text"
+            name="experience.positionTitle"
+            value={experience.positionTitle}
+            onChange={onChange}
+            required
+          />
+        </label>
+        <br />
+        <label>
+          Main Tasks:
+          <input
+            type="text"
+            name="experience.mainTasks"
+            value={experience.mainTasks}
+            onChange={onChange}
+            required
+          />
+        </label>
+        <br />
+        <label>
+          Date worked from:
+          <input
+            type="date"
+            name="experience.dateFrom"
+            value={experience.dateFrom}
+            onChange={onChange}
+            required
+          />
+        </label>
+        <br />
+        <label>
+          Date worked till:
+          <input
+            type="date"
+            name="experience.dateTill"
+            value={experience.dateTill}
+            onChange={onChange}
+            required
+          />
+        </label>
+        <br />
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+  );
 }
 
 export default Experience;
